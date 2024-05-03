@@ -2,8 +2,7 @@
 
 namespace App\Exceptions;
 
-//use Exception;
-Use Throwable;
+use Exception;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -32,9 +31,9 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      * @return void
      */
-    public function report(Throwable $exception)
+    public function report(Exception $e)
     {
-        parent::report($exception);
+        parent::report($e);
     }
 
     /**
@@ -44,8 +43,8 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Throwable $exception)
+    public function render($request, Exception $e)
     {
-        return parent::render($request, $exception);
+        return parent::render($request, $e);
     }
 }

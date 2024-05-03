@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-//Route::auth();
+Route::auth();
 Route::get('/user', 'HomeController@index');
 Route::get('/user/edit', 'HomeController@edit');
 
